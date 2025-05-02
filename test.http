@@ -2,7 +2,7 @@
 GET http://localhost:8080/service/get-expenses
 
 ### test get expense by id
-GET http://localhost:8080/service/get-expense/1
+GET http://localhost:8080/service/get-expense/4
 
 ### test create expense
 POST http://localhost:8080/service/add-expense
@@ -16,26 +16,32 @@ Content-Type: application/json
     "paymentMethod": "CREDIT_CARD"
 }
 
-### test create expense 2
+### test create expense 
 POST http://localhost:8080/service/add-expense
 Content-Type: application/json
 
 {
     "amount": 50,
-    "description": "test2",
-    "date": "2002-01-03",
-    "category": "OTHER",
-    "paymentMethod": "OTHER"
+    "description": "tester",
+    "date": "2025-05-02",
+    "category": "HEALTHCARE",
+    "paymentMethod": "EASY_CARD"
 }
 
 ### test update expense
-PUT http://localhost:8080/service/update-expense/1
+PUT http://localhost:8080/service/update-expense/4
 Content-Type: application/json
 
 {
-    "amount": 101,
-    "description": "test3, updated",
-    "date": "2021-01-01",
-    "category": "FOOD",
-    "paymentMethod": "CREDIT_CARD"
+    "amount": 1280,
+    "description": "test4",
+    "date": "2025-05-02",
+    "category": "SHOPPING",
+    "paymentMethod": "APPLE_PAY"
 }
+
+### test delete expense
+DELETE http://localhost:8080/service/delete-expense/1
+
+
+

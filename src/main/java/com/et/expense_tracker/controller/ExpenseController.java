@@ -60,6 +60,7 @@ public class ExpenseController {
         existingExpense.setAmount(expense.getAmount());
         existingExpense.setDate(expense.getDate());
         existingExpense.setCategory(expense.getCategory());
+        existingExpense.setPaymentMethod(expense.getPaymentMethod());
       
         return ResponseEntity.ok(expenseRepository.save(existingExpense));
 
