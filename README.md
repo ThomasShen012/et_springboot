@@ -1,5 +1,5 @@
 # et_springboot
-expense tracker by spring boot
+expense tracker by spring boot with PostgreSQL
 
 
 ## Setup
