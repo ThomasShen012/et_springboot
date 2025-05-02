@@ -1,5 +1,6 @@
-<h>et_springboot</h>
+# et_springboot
 expense tracker by spring boot
+
 
 ## Setup
 I replaced my 'application.properties' with 'application.properties.example' to cover my username and password
