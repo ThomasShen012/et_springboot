@@ -6,7 +6,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import java.time.LocalDateTime;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import java.time.LocalDate;
+
+import io.micrometer.common.lang.NonNull;
 
 @Entity
 @Data
@@ -16,9 +20,21 @@ public class Expense {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String description;
-    private Double amount;
-    private LocalDateTime date;
-    private String category;
 
+    @NonNull
+    private String description;
+
+    @NonNull
+    private Double amount;
+
+    @NonNull
+    private LocalDate date;
+
+    @NonNull
+    @Enumerated(EnumType.STRING)
+    private Category category;
+    
+    @NonNull
+    @Enumerated(EnumType.STRING)
+    private PaymentMethod paymentMethod;
 }
