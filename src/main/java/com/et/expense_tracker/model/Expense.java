@@ -10,7 +10,7 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import java.time.LocalDate;
 
-import io.micrometer.common.lang.NonNull;
+import jakarta.validation.constraints.*;
 
 @Entity
 @Data
@@ -21,20 +21,21 @@ public class Expense {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NonNull
+    @NotBlank(message = "Description is required")
     private String description;
 
-    @NonNull
+    @NotNull(message = "Amount is required")
+    @Positive(message = "Amount must be positive")
     private Double amount;
 
-    @NonNull
+    @NotNull(message = "Date is required")
     private LocalDate date;
 
-    @NonNull
+    @NotNull(message = "Category is required")
     @Enumerated(EnumType.STRING)
     private Category category;
     
-    @NonNull
+    @NotNull(message = "Payment method is required")
     @Enumerated(EnumType.STRING)
     private PaymentMethod paymentMethod;
 }
